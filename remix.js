@@ -531,7 +531,8 @@ function fixFileName(name) {
 }
 
 function fetchSignature() {
-    var url = 'http://remix.echonest.com/Uploader/verify?callback=?&v=audio'
+    // var url = 'http://remix.echonest.com/Uploader/verify?callback=?&v=audio'
+    var url = 'http://54.242.144.133:8080/Uploader/verify?callback=?&v=audio';
     $.getJSON(url, {}, function(data) {
         policy = data.policy;
         signature = data.signature;
@@ -543,7 +544,8 @@ function fetchSignature() {
 
 // And this needs to change to get the URL back from the DB, not from our amazon refs
 function getProfile(trackID, callback) {
-    var url = 'http://remix.echonest.com/Uploader/profile?callback=?';
+    // var url = 'http://remix.echonest.com/Uploader/profile?callback=?';
+    var url = 'http://54.242.144.133:8080/Uploader/profile?callback=?';
     return $.getJSON(url, {trid: trackID}, callback); 
 }
 
