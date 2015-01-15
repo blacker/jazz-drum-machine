@@ -234,7 +234,7 @@ function createJRemixer(context, jquery, apiKey) {
                     audioSource.buffer = q;
                     audioSource.connect(audioGain);
                     currentlyQueued.push(audioSource);
-                    audioSource.noteOn(when);
+                    audioSource.start(when);
                     if (onPlayCallback != null) {
                         theTime = (when - context.currentTime) *  1000;
                         currentTriggers.push(setTimeout(onPlayCallback, theTime));
@@ -259,7 +259,7 @@ function createJRemixer(context, jquery, apiKey) {
                     audioSource.connect(audioGain);
                     q.audioSource = audioSource;
                     currentlyQueued.push(audioSource);
-                    audioSource.noteGrainOn(when, q.start, q.duration);
+                    audioSource.start(when, q.start, q.duration);
 
                     // I need to clean up all these ifs
                     if ("syncBuffer" in q) {
@@ -267,7 +267,7 @@ function createJRemixer(context, jquery, apiKey) {
                         audioSource.buffer = q.syncBuffer;
                         audioSource.connect(audioGain);
                         currentlyQueued.push(audioSource);
-                        audioSource.noteOn(when);
+                        audioSource.start(when);
                     }
 
                     if (onPlayCallback != null) {
