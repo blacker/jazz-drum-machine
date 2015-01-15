@@ -36,7 +36,6 @@
 				<div class="arrow"></div>
 				<ul>
 					<li><a href="#choose-drummer">Choose a drummer</a></li>
-					<li><a href="#choose-file">Upload a file</a></li>
 				</ul>
 			</menu>
 		</div>
@@ -44,24 +43,6 @@
 		<div id="main">
 			<section id="choose-drummer">
 	  			<select id='select-drummer'></select>
-			</section>
-			<section id="choose-file">
-				<div id='select-track'>
-		            <form action="https://static.jazzdrummachine.com.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-		              <input id='f-filename' type="hidden" name="key" value="remix_audio/${filename}">
-		              <input id='f-key' type="hidden" name="AWSAccessKeyId" value="YOUR_AWS_ACCESS_KEY"> 
-		              <input type="hidden" name="acl" value="public-read"> 
-		              <input id='redirect-url' type="hidden" name="success_action_redirect"
-		                  value="YOUR_URL">
-		              <input id='f-policy' type="hidden" name="policy" value="YOUR_POLICY_DOCUMENT_BASE64_ENCODED">
-		              <input id='f-signature' type="hidden" name="signature" value="YOUR_CALCULATED_SIGNATURE">
-		              <input type="hidden" name="Content-Type" value="audio/mpeg">
-		              <input id="file" name="file" type="file"> 
-		              
-		              <input class="btn" id='upload' type="submit" value="Upload MP3"> 
-		            </form> 
-		            <br/>
-		        </div>
 			</section>
 	        <section id='play-remix'>
 					<div id="buttons">

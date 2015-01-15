@@ -189,7 +189,6 @@ function init() {
         }
     );
     fetchSignature();
-    fetchQinfo();
     
 
     if ('key' in params) {
@@ -325,23 +324,6 @@ function init() {
                 console.log("Track id error.");
 		console.log(data);
                 $("#play-remix").hide();
-                $("#select-track").show();
-                $("#info").text("Error getting the track URL - please try again, or re-upload the file.");
-                $("#redirect-url").attr('value', document.URL);
-
-                $("#file").change( 
-                    function() {
-                        fetchQinfo();
-                        var filename = $("#file").val();
-                        if (endsWith(filename.toLowerCase(), ".mp3")) {
-                            $("#f-filename").attr('value', fixFileName(filename));
-                            $("#upload").removeAttr('disabled');
-                        } else {
-                            alert('Sorry, this app only supports MP3s');
-                            $("#upload").attr('disabled', 'disabled');
-                        }
-                    }
-                );
                 fetchSignature();
             }
         });
