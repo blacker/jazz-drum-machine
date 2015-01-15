@@ -64,7 +64,7 @@ function createJRemixer(context, jquery, apiKey) {
                     track.status = 'error: loading audio'
                 }
                 request.onprogress = function(e) {
-                    var percent = Math.round(e.position * 100  / e.totalSize);
+                    var percent = Math.round(e.loaded * 100  / e.total);
                     callback(track, percent);   
                 }
                 request.send();
@@ -217,7 +217,7 @@ function createJRemixer(context, jquery, apiKey) {
 
         getPlayer : function() {
             var queueTime = 0;
-            var audioGain = context.createGainNode();
+            var audioGain = context.createGain();
             var curAudioSource = null;
             var currentlyQueued = new Array();
             var curQ = null;
